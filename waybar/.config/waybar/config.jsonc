@@ -1,22 +1,34 @@
 {
-    "position": "top",
-    "modules-left": ["hyprland/workspaces"],
-    "modules-center": ["hyprland/window"],
-    "modules-right": ["network", "pulseaudio", "clock"],
-    "clock": {
-      "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
-      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  "position": "top",
+  "modules-left": ["hyprland/workspaces"],
+  "modules-center": ["hyprland/window"],
+  "modules-right": ["network", "pulseaudio", "clock"],
+  "clock": {
+    "format": "<span foreground='#f5c2e7'>   </span>{:%a %d %H:%M}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+  },
+  "network": {
+    "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󰈁</span>",
+    "format-disconnected": "<span size='13000' foreground='#f5e0dc'>󰈂</span>",
+    "tooltip-format-ethernet": "Ethernet Connected",
+    "tooltip-format-disconnected": "Ethernet Disconnected"
+  },
+  "pulseaudio": {
+    "format": "{icon}  {volume}%",
+    "format-muted": "",
+    "format-icons": {
+      "default": ["", "", " "]
     },
-    "network": {
-      "format-ethernet": "<span size='13000' foreground='#f5e0dc'>󱘖 </span> Connected",
-      "format-disconnected": "<span size='13000' foreground='#f5e0dc'>󱘖 </span>Disconnected"
-    },
-    "pulseaudio": {
-        "format": "{icon}  {volume}%",
-        "format-muted": "",
-        "format-icons": {
-            "default": ["", "", " "]
-        },
-        "on-click": "pavucontrol"
+    "on-click": "pulseaudio"
+  },
+  "hyprland/window": {
+    "separate-outputs": true
+  },
+  "hyprland/workspaces": {
+    "show-special": true,
+    "format": "{icon}",
+    "format-icons": {
+      "special": ""
     }
   }
+}
